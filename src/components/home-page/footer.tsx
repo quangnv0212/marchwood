@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "@/assets/images/Logo.png";
+import Logo from "@/assets/images/logo.png";
 import Linkedin from "@/assets/images/LI-White.png";
 import WhatsApp from "@/assets/images/WA-White.png";
 export default function Footer() {

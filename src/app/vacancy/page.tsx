@@ -3,7 +3,7 @@ import LogoWhite from "@/assets/images/logo_white.png";
 import Image from "next/image";
 import IcLeftArr from "@/assets/images/Arrow.png";
 import IcMechanical from "@/assets/images/ic_mechanical.png";
-import Mechanical from "@/assets/images/mechanical.png";
+import Mechanical from "@/assets/images/Mechanical.png";
 import IcMoney from "@/assets/images/ic_money.png";
 import Cloud from "@/assets/images/upload-cloud.png";
 import IcPermanent from "@/assets/images/ic_permanance.png";
