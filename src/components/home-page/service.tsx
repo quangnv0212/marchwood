@@ -1,6 +1,10 @@
 "use client";
+import SwiperCore from "swiper";
 import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+SwiperCore.use([Autoplay]);
 
 import CAD from "@/assets/images/CAD_1 1.png";
 import Leadership from "@/assets/images/Leadership.png";
@@ -104,8 +108,11 @@ export function Service() {
               style={{
                 zIndex: 0,
               }}
-              spaceBetween={5}
+              spaceBetween={20}
               slidesPerView={3}
+              autoplay={{
+                delay: 3000,
+              }}
             >
               {listData.map((data) => (
                 <SwiperSlide key={data.title}>
@@ -128,6 +135,9 @@ export function Service() {
               }}
               spaceBetween={5}
               slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+              }}
             >
               {listData.map((data) => (
                 <SwiperSlide key={data.title}>

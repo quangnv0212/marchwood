@@ -1,16 +1,11 @@
-import React from "react";
-import LogoWhite from "@/assets/images/logo_white.png";
-import Image from "next/image";
 import IcLeftArr from "@/assets/images/Arrow.png";
-import IcMechanical from "@/assets/images/ic_mechanical.png";
-import Mechanical from "@/assets/images/Mechanical.png";
-import IcMoney from "@/assets/images/ic_money.png";
-import Cloud from "@/assets/images/upload-cloud.png";
-import IcPermanent from "@/assets/images/ic_permanance.png";
-import IcAviation from "@/assets/images/ic_aviation.png";
-import IcLocation from "@/assets/images/Location 2.svg";
 import Location1 from "@/assets/images/Location 1.png";
-import { Upload } from "@mui/icons-material";
+import IcLocation from "@/assets/images/Location 2.svg";
+import Mechanical from "@/assets/images/Mechanical.png";
+import IcAviation from "@/assets/images/ic_aviation.png";
+import IcMechanical from "@/assets/images/ic_mechanical.png";
+import IcMoney from "@/assets/images/ic_money.png";
+import IcPermanent from "@/assets/images/ic_permanance.png";
 import UploadCV from "@/components/job-seekers-page/uploadCV";
 
 export default function Page() {
