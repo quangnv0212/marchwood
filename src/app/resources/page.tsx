@@ -27,16 +27,16 @@ export default function Page() {
           className=" object-cover w-full"
         />
         <div className="md:px-7 md:py-4 flex flex-col p-2 gap-3 justify-start items-start">
-          <p className="md:text-4xl text-white text-base font-semibold text-left">
+          <p className="md:text-3xl  text-white text-base font-semibold text-left">
             IR35
           </p>
-          <p className="md:text-4xl text-white text-base font-semibold text-left">
+          <p className="md:text-3xl text-white text-base font-semibold text-left">
             {data.title}
           </p>
         </div>
         <div className="flex w-full justify-center">
           <button
-            className={`hover:bg-black  text-white bg-primary border-white border p-4 md:px-44 text-base md:text-2xl`}
+            className={`hover:bg-black  text-white bg-primary border-white border p-4 md:px-20 text-base md:text-2xl`}
           >
             Read it
           </button>
