@@ -20,11 +20,11 @@ export function CardComponent(data: {
         height={300}
         className="w-full object-cover"
       />
-      <div className="md:px-7 md:py-4 flex flex-col p-2 gap-3">
-        <p className="md:text-3xl text-white text-base font-semibold text-left md:h-24">
+      <div className="md:px-7 md:py-4 flex flex-col p-2 gap-3 md:gap-10">
+        <p className="md:text-4xl text-white text-base font-semibold text-left md:h-24">
           {data.title}
         </p>
-        <p className="text-left text-white md:h-24 mb-2 text-sm ">
+        <p className="text-left text-white md:h-24 mb-2 text-sm md:text-xl">
           {data.content}
         </p>
         <div className="w-full flex justify-center">

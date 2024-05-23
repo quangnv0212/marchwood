@@ -1,4 +1,4 @@
-import AboutUsBanner from "@/assets/images/about-us-banner.png";
+import JobSeekersBanner from "@/assets/images/job-seekers-banner.png";
 import Link from "next/link";
 export default function BannerJobSeekers() {
   const buttons = [
@@ -14,7 +14,7 @@ export default function BannerJobSeekers() {
   return (
     <div
       style={{
-        backgroundImage: `url(${AboutUsBanner.src})`,
+        backgroundImage: `url(${JobSeekersBanner.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

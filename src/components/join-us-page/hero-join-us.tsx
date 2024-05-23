@@ -1,10 +1,10 @@
-import AboutUsBanner from "@/assets/images/about-us-banner.png";
+import JoinusBanner from "@/assets/images/join-us-banner.png";
 import Link from "next/link";
 export default function HeroJoinUs() {
   return (
     <div
       style={{
-        backgroundImage: `url(${AboutUsBanner.src})`,
+        backgroundImage: `url(${JoinusBanner.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

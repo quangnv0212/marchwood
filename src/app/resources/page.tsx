@@ -17,7 +17,7 @@ export default function Page() {
     return (
       <div
         key={data.title}
-        className="flex flex-col gap-2 items-start bg-[#182A3E] md:pb-10"
+        className="flex flex-col gap-2 md:gap-14 items-start bg-[#182A3E] md:pb-20 pb-10"
       >
         <Image
           src={data?.image?.src}
@@ -27,16 +27,16 @@ export default function Page() {
           className=" object-cover w-full"
         />
         <div className="md:px-7 md:py-4 flex flex-col p-2 gap-3 justify-start items-start">
-          <p className="md:text-xl text-white text-base font-semibold text-left">
+          <p className="md:text-4xl text-white text-base font-semibold text-left">
             IR35
           </p>
-          <p className="md:text-xl text-white text-base font-semibold text-left">
+          <p className="md:text-4xl text-white text-base font-semibold text-left">
             {data.title}
           </p>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="flex w-full justify-center">
           <button
-            className={`hover:bg-black text-white bg-primary border-white border md:p-2 p-1 w-2/3 mb-4 text-base`}
+            className={`hover:bg-black  text-white bg-primary border-white border p-4 md:px-44 text-base md:text-2xl`}
           >
             Read it
           </button>
@@ -84,7 +84,7 @@ export default function Page() {
     },
   ];
   return (
-    <div className="p-3 flex flex-col gap-6 md:p-16">
+    <div className="p-3 flex flex-col gap-6 md:p-16 md:gap-10">
       <p className="uppercase font-semibold">
         <Link href={"/"}>HOME</Link> / <Link href={"#"}>RESOURCES</Link> / BLOG
       </p>

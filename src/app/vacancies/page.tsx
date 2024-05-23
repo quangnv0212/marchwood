@@ -1,17 +1,17 @@
-import React from "react";
-import Checkbox from "@mui/material/Checkbox";
+"use client";
+import IcAviation from "@/assets/images/ic_aviation.png";
+import IcFilter from "@/assets/images/ic_filter.svg";
+import IcLeftArr from "@/assets/images/ic_leftarrow.png";
 import IcLocation from "@/assets/images/ic_location.png";
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-import LogoWhite from "@/assets/images/logo_white.png";
-import Image from "next/image";
 import IcMechanical from "@/assets/images/ic_mechanical.png";
 import IcMoney from "@/assets/images/ic_money.png";
 import IcPermanent from "@/assets/images/ic_permanance.png";
-import IcAviation from "@/assets/images/ic_aviation.png";
-import IcLeftArr from "@/assets/images/ic_leftarrow.png";
 import IcRightArr from "@/assets/images/ic_rightarrow.png";
+import Checkbox from "@mui/material/Checkbox";
+import Image from "next/image";
 import Link from "next/link";
-import Cloud from "@/assets/images/upload-cloud.png";
+import { useEffect, useRef, useState } from "react";
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 import UploadCV from "@/components/job-seekers-page/uploadCV";
 export default function Page() {
@@ -100,6 +100,22 @@ export default function Page() {
       icon: IcMoney,
     },
   ];
+
+  const [isDivVisible, setIsDivVisible] = useState(true);
+  const divRef = useRef<any>(null);
+  useEffect(() => {
+    const clickHandler = (event: any) => {
+      if (divRef.current && !divRef.current.contains(event.target)) {
+        setIsDivVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", clickHandler);
+
+    return () => {
+      document.removeEventListener("mousedown", clickHandler);
+    };
+  }, []);
   return (
     <div className="bg-primary text-white">
       <div className="flex flex-col gap-12 md:p-10 md:px-16 p-3">
@@ -111,8 +127,8 @@ export default function Page() {
         <p className="md:text-3xl text-2xl font-semibold">
           Find your dream job.
         </p>
+
         <div className="flex md:flex-row flex-col md:gap-8 gap-3">
-          {/* <input type="text" className='bg-transparent ' placeholder='Keywords' /> */}
           <select
             name=""
             id=""
@@ -123,31 +139,70 @@ export default function Page() {
           <select name="" id="" className="bg-transparent p-2 border md:w-1/3">
             <option value="">Location</option>
           </select>
+          <div className="mobile">
+            <button
+              onClick={() => {
+                setIsDivVisible(true);
+              }}
+              className="flex w-full items-center justify-center gap-3 border p-2"
+            >
+              <Image
+                src={IcFilter.src}
+                width={24}
+                height={24}
+                className="text-white"
+                alt=""
+              />
+              Filter
+            </button>
+            {isDivVisible && (
+              <div ref={divRef} className="bg-white text-primary">
+                {data.map((item, idx) => (
+                  <div key={idx} className="border text-sm border-primary p-3">
+                    <p>{item.title}</p>
+                    {item.items.map((item, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <Checkbox {...label} className="border-white" />
+                        <p>{item}</p>
+                      </div>
+                    ))}
+                    {item.isMore && (
+                      <button className="border border-primary w-full p-1">
+                        More
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
           <button className="border p-2 md:w-1/4">Search</button>
         </div>
       </div>
       <div className="">
         <div className="bg-white md:p-16 text-primary flex md:gap-16">
-          <div className="w-1/3 flex flex-col gap-3 ">
-            {data.map((item, idx) => (
-              <div key={idx} className="border border-primary p-6">
-                <p>{item.title}</p>
-                {item.items.map((item, idx) => (
-                  <div key={idx} className="flex items-center">
-                    <Checkbox {...label} />
-                    <p>{item}</p>
-                  </div>
-                ))}
-                {item.isMore && (
-                  <button className="border border-primary w-full p-3 mt-2">
-                    More
-                  </button>
-                )}
-              </div>
-            ))}
+          <div className="md:w-1/3 flex flex-col gap-3">
+            <div className="desktop">
+              {data.map((item, idx) => (
+                <div key={idx} className="border border-primary  p-6">
+                  <p>{item.title}</p>
+                  {item.items.map((item, idx) => (
+                    <div key={idx} className="flex items-center">
+                      <Checkbox {...label} />
+                      <p>{item}</p>
+                    </div>
+                  ))}
+                  {item.isMore && (
+                    <button className="border border-primary w-full p-3 mt-2">
+                      More
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="flex flex-col gap-10 p-3">
+          <div className="flex flex-col gap-10 p-3 py-10">
             {jobList.map((job, idx) => (
               <div key={idx} className="flex flex-col gap-4 border-b-2 pb-7">
                 <p className="md:text-2xl text-xl font-semibold">{job.title}</p>
@@ -175,7 +230,7 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="bg-white text-primary pb-10 ">
+      <div className="bg-white text-primary pb-10 text-sm md:text-xl ">
         <div className="flex justify-between md:px-60 p-3">
           <div className="flex gap-2 items-center">
             <img src={IcLeftArr.src} alt="" />

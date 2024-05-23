@@ -1,6 +1,7 @@
 "use client";
 
 import Work from "@/assets/images/work.png";
+import { IntroCommon } from "@/components/intro-common";
 import UploadCV from "@/components/job-seekers-page/uploadCV";
 import HeroJoinUs from "@/components/join-us-page/hero-join-us";
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -9,6 +10,9 @@ import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import BackgroundRight from "@/assets/images/background-right.png";
+import BackgroundLeft from "@/assets/images/back-ground-left.png";
+import BackgroundLeftWhite from "@/assets/images/background-left-white.png";
 import { useState } from "react";
 
 export default function JoinUsPage() {
@@ -33,7 +37,7 @@ export default function JoinUsPage() {
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
-          <p className="p-3 text-xs">
+          <p className="p-3 text-sm md:text-base">
             Lorem ipsum dolor sit amet consectetur. Turpis mattis egestas diam
             eu purus convallis lacus turpis ac. Fermentum quis ac lacus ultrices
             dignissim quis lectus sem at. Proin ut donec tempor egestas metus ac
@@ -67,35 +71,67 @@ export default function JoinUsPage() {
   return (
     <div>
       <HeroJoinUs />
-      <div className="flex p-3">
-        <div className="flex md:w-2/3 flex-col md:gap-4 gap-3 items-start md:p-14">
-          <p className="md:text-3xl text-xl font-semibold">Clever title</p>
-          <p className="text-sm">
-            Marchwood are an innovative recruitment agency who represent world
-            class talent in Sustainable Building Design. We combine human
-            decision-making and technology to find the best talent our industry
-            has to offer, and present this to our loyal customers in a way that
-            turn is impossible.
-          </p>
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundRight.src})`,
+          backgroundSize: "cover",
+        }}
+        className=" text-primary"
+      >
+        <IntroCommon
+          description={
+            <>
+              <p className="text-sm md:text-base">
+                Marchwood are an innovative recruitment agency who represent
+                world class talent in Sustainable Building Design. We combine
+                human decision-making and technology to find the best talent our
+                industry has to offer, and present this to our loyal customers
+                in a way that turn is impossible.
+              </p>
+            </>
+          }
+          title="Clever title"
+          dark={true}
+        />
+      </div>
+      <div
+        className=""
+        style={{
+          backgroundImage: `url(${BackgroundLeft.src})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 gap-3 p-3 items-start md:justify-between md:p-14">
+          <div className="">
+            <img className="object-cover" src={Work.src} alt="work" />
+          </div>
+          <div className="flex flex-col gap-10">
+            <p className="md:text-3xl md:text-right text-xl font-semibold">
+              Clever Title
+            </p>
+            <p className="text-sm md:text-base md:text-right">
+              Marchwood are an innovative recruitment agency who represent world
+              class talent in Sustainable Building Design. We combine human
+              decision-making and technology to find the best talent our
+              industry has to offer, and present this to our loyal customers in
+              a way that turn is impossible.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="flex md:w-2/3 flex-col md:gap-4 gap-3 p-3 items-start md:p-14">
-        <p className="md:text-3xl text-xl font-semibold">Clever title</p>
-        <img src={Work.src} alt="work" />
-        <p className="text-sm">
-          Marchwood are an innovative recruitment agency who represent world
-          class talent in Sustainable Building Design. We combine human
-          decision-making and technology to find the best talent our industry
-          has to offer, and present this to our loyal customers in a way that
-          turn is impossible.
-        </p>
-      </div>
-      <div className="flex gap-3 flex-col p-3 md:p-16">
-        <div className="flex flex-col gap-3">
+
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundLeft.src})`,
+          backgroundSize: "cover",
+        }}
+        className="flex gap-3 flex-col p-3 md:p-16"
+      >
+        <div className="flex flex-col gap-3 md:gap-10">
           <p className="md:text-3xl text-xl font-semibold">
             Why join Marchwood
           </p>
-          <p className="text-sm">
+          <p className="text-sm md:text-base">
             Lorem ipsum dolor sit amet consectetur. Vel aliquet non velit fames
             enim.
           </p>
@@ -131,7 +167,7 @@ export default function JoinUsPage() {
             </div>
 
             <div className="">
-              <p className="text-sm">
+              <div className="text-sm md:text-base">
                 {data.map((item) => (
                   <div
                     key={item.title}
@@ -142,12 +178,20 @@ export default function JoinUsPage() {
                     {item.des}
                   </div>
                 ))}
-              </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <UploadCV title="Apply to work at Marchwood" />
+      <div
+        className=""
+        style={{
+          backgroundImage: `url(${BackgroundLeftWhite.src})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <UploadCV title="Apply to work at Marchwood" />
+      </div>
     </div>
   );
 }

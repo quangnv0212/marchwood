@@ -83,7 +83,7 @@ export function Header() {
         scrollDirection === "down" ? "-top-24" : "top-0"
       }  bg-primary transition-all duration-500 text-white z-10`}
     >
-      <div className="flex items-center justify-between md:p-5 p-3">
+      <div className="flex items-center justify-between md:p-5 md:px-16 p-3">
         <Link href={"/"}>
           <Image
             src={LogoWhite}

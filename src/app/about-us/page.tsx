@@ -8,6 +8,8 @@ import StandFor from "@/components/about-us-page/stand-for";
 import { CardComponent } from "@/components/card-component";
 import { IntroCommon } from "@/components/intro-common";
 import { SliderComponent } from "@/components/slider-component";
+import BackgroundRight from "@/assets/images/background-right.png";
+import BackgroundLeft from "@/assets/images/back-ground-left.png";
 import Image from "next/image";
 
 export default function AboutUsPage() {
@@ -34,56 +36,80 @@ export default function AboutUsPage() {
   return (
     <div className="">
       <HeroAboutUs />
-      <div className="text-primary">
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundRight.src})`,
+          backgroundSize: "cover",
+        }}
+        className="text-primary"
+      >
         <IntroCommon
-          description="Marchwood are an innovative recruitment agency who represent world
-          class talent in Sustainable Building Design. We combine human
-          decision-making and technology to find the best talent our industry
-          has to offer, and present this to our loyal customers in a way that
-          makes hiring easy. No BS. Just a great service that is easy to access
-          and does all of the heavy lifting for you. Navigating the world of
-          hiring and making a career move is not easy. There are so many wrong
-          turns that can be made. With help from Marchwood, utilising our
-          expertise in Sustainable Building Design recruitment, making a wrong
-          turn is impossible."
+          description={
+            <>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Purus purus duis eget
+                interdum integer orci enim. Sapien etiam ac porttitor integer
+                eleifend. Turpis ut vulputate dolor nam quis. Netus netus
+                elementum molestie duis. Sed ultrices morbi aliquam dui. Proin
+                etiam odio scelerisque justo elementum elementum volutpat
+                pellentesque velit.
+              </p>
+              <br />
+              <p>
+                Velit non tincidunt netus ac nunc mauris. Sit et mattis non
+                vitae tristique id. Molestie at vel tincidunt ut neque at.
+                Habitant faucibus sit nam risus a sociis. Pellentesque arcu
+                senectus ac vitae tristique ut consequat amet.
+              </p>
+            </>
+          }
           title="Our story"
           dark
         />
       </div>
       <StandFor />
-      <Purpose />
-      <SliderComponent title="Meet your consultants" />
-      <div className="md:pt-10 p-3">
-        <p className="md:text-3xl text-xl mb-3 font-semibold text-left md:text-center md:px-64 md:pb-10">
-          What can we do for you?
-        </p>
-        <div className="md:grid md:grid-cols-3 text-white flex flex-col md:px-20 items-center gap-4 text-center justify-center">
-          {listData.map((data) => (
-            <CardComponent
-              key={data.title}
-              title={data.title}
-              content={data.content}
-              image={data.image}
-              dark
-            />
-          ))}
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundLeft.src})`,
+          backgroundSize: "cover",
+        }}
+        className="pb-16"
+      >
+        <Purpose />
+        <SliderComponent title="Meet your consultants" />
+        <div className="md:pt-10 p-3">
+          <p className="md:text-3xl text-xl mb-3 font-semibold text-left md:text-center md:px-64 md:pb-10">
+            What can we do for you?
+          </p>
+          <div className="grid md:grid-cols-3 text-white md:px-10 items-center gap-4 text-center justify-between">
+            {listData.map((data) => (
+              <CardComponent
+                key={data.title}
+                title={data.title}
+                content={data.content}
+                image={data.image}
+                dark
+              />
+            ))}
+          </div>
         </div>
       </div>
-      <div className="md:px-40 md:py-10 flex flex-col gap-4 p-3">
+
+      <div className="md:px-40 md:py-24 flex flex-col gap-4 md:gap-7 p-3">
         <div className="flex justify-center">
           <Image
             src={Quote}
             alt="quote"
             width={80}
             height={80}
-            className="w-16 h-16"
+            className="md:w-32 md:h-32"
           />
         </div>
         <p className="text-center md:text-3xl text-sm font-semibold">
           “We are passionate about connecting world-class talent in sustainable
           building design with dynamic organisations.”
         </p>
-        <p className="text-center">JOE BLOGGS | XXX COMPANY</p>
+        <p className="text-center md:text-2xl">JOE BLOGGS | XXX COMPANY</p>
       </div>
     </div>
   );

@@ -19,17 +19,17 @@ export default function StandFor() {
     },
   ];
   return (
-    <div className="bg-[#192A3E] md:py-16 flex flex-col gap-5 md:gap-10 p-4">
-      <p className="text-[#B1844D] font-semibold md:text-3xl text-3xl text-center">
+    <div className="bg-[#192A3E] md:py-24 md:pb-28 flex flex-col gap-5 md:gap-16 p-4">
+      <p className="text-[#B1844D] font-semibold md:text-4xl text-3xl text-center">
         What we stand for
       </p>
-      <div className="md:grid md:grid-cols-3 flex flex-col gap-7 text-white md:px-20 md:gap-16">
+      <div className="md:grid md:grid-cols-3 flex flex-col gap-7 text-white md:px-28 md:gap-24">
         {data.map((item, index) => (
-          <div key={index} className="flex flex-col md:gap-4 gap-2">
-            <p className="md:text-3xl text-xl font-semibold text-center">
+          <div key={index} className="flex flex-col md:gap-6 gap-2">
+            <p className="md:text-4xl text-xl font-semibold text-center md:max-w-96">
               {item.title}
             </p>
-            <p className="text-center">{item.description}</p>
+            <p className="text-center md:text-xl">{item.description}</p>
           </div>
         ))}
       </div>

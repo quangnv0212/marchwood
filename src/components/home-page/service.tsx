@@ -15,6 +15,8 @@ import Make from "@/assets/images/make_a_different.png";
 import Quote from "@/assets/images/quote.png";
 import Unlease from "@/assets/images/unlease.png";
 import Image from "next/image";
+import BackgroundRight from "@/assets/images/background-right.png";
+
 import { CardComponent } from "../card-component";
 export function Service() {
   const dataList = [
@@ -75,7 +77,13 @@ export function Service() {
   ];
   return (
     <>
-      <div className="md:py-10 p-3">
+      <div
+        style={{
+          backgroundImage: `url(${BackgroundRight.src})`,
+          backgroundSize: "cover",
+        }}
+        className="md:py-24 p-3"
+      >
         <p className="md:text-3xl text-xl mb-3 font-semibold text-center md:pb-10">
           Recruiting permanent and contract roles in building services design
         </p>
@@ -92,7 +100,7 @@ export function Service() {
                 height={500}
                 className="md:w-[200px] md:h-[200px]  w-[70px] h-[70px] object-cover"
               />
-              <p>{data.title}</p>
+              <p className="uppercase md:text-xl">{data.title}</p>
             </div>
           ))}
         </div>
@@ -162,9 +170,15 @@ export function Service() {
             />
           ))} */}
       </div>
-      <div className="md:px-40 md:py-10 flex flex-col gap-4 p-2">
+      <div className="md:px-40 md:py-24 flex flex-col gap-4 p-2">
         <div className="flex justify-center">
-          <Image src={Quote} alt="quote" width={80} height={80} />
+          <Image
+            src={Quote}
+            alt="quote"
+            width={80}
+            height={80}
+            className="md:w-32 md:h-32"
+          />
         </div>
         <p className="text-center md:text-3xl text-xl font-semibold">
           “We are passionate about connecting world-class talent in sustainable

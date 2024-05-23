@@ -7,7 +7,7 @@ export function ButtonCommon({ children, dark }: IButtonCommonProps) {
     <button
       className={`${
         dark ? "hover:bg-black text-white bg-primary border-white" : ""
-      } border border-black md:p-4 w-full p-1`}
+      } border border-black md:p-4 md:px-6 p-1`}
     >
       {children}
     </button>

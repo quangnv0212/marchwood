@@ -1,11 +1,10 @@
 export interface IIntroCommonProps {
   title: string;
-  description: string;
+  description: any;
   buttonText?: string;
   dark?: boolean;
-  rightImage?: boolean;
+  rightImage?: any;
 }
-import MaskGroup from "@/assets/images/Mask group.png";
 import Image from "next/image";
 import { ButtonCommon } from "./button-common";
 export function IntroCommon({
@@ -13,26 +12,18 @@ export function IntroCommon({
   description,
   buttonText,
   dark = false,
-  rightImage = true,
+  rightImage,
 }: IIntroCommonProps) {
   return (
-    <div className="flex p-3">
-      <div className="flex md:w-2/3 flex-col md:gap-4 gap-3 items-start md:p-14">
+    <div className="flex p-3 md:p-0">
+      <div className="flex md:w-5/6 flex-col md:gap-6 gap-3 items-start md:p-16 md:py-24">
         <p className="md:text-3xl text-xl font-semibold">{title}</p>
-        <p className="text-sm">{description}</p>
-        {buttonText && <ButtonCommon dark={dark}>{buttonText}</ButtonCommon>}
-      </div>
-      {rightImage && (
-        <div className="w-1/3 desktop">
-          <Image
-            src={MaskGroup}
-            alt="Mask group"
-            width={500}
-            height={2500}
-            className=""
-          />
+        <div className="text-sm md:text-xl md:w-5/6">{description}</div>
+        <div className="md:text-xl">
+          {buttonText && <ButtonCommon dark={dark}>{buttonText}</ButtonCommon>}
         </div>
-      )}
+      </div>
+      {rightImage}
     </div>
   );
 }
