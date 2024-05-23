@@ -33,7 +33,7 @@ export default function Ir35() {
         </div>
         <div className="flex w-full justify-center">
           <button
-            className={`hover:bg-black  text-white bg-primary border-white border p-4 md:px-20 text-base md:text-2xl`}
+            className={`hover:bg-black  text-white bg-primary border-white border p-2 md:px-20 text-base md:text-2xl`}
           >
             Read it
           </button>

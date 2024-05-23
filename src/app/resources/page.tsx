@@ -1,13 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import IcArrDown from "@/assets/images/ic_arrdown.png";
-import Specialist from "@/assets/images/Special.png";
 import Unlease from "@/assets/images/unlease.png";
-import Drive from "@/assets/images/drive_progress.png";
-import Make from "@/assets/images/make_a_different.png";
-import Quote from "@/assets/images/quote.png";
 import Image, { StaticImageData } from "next/image";
-import { ButtonCommon } from "@/components/button-common";
+import Link from "next/link";
 export default function Page() {
   function CardComponent(data: {
     title: string;
@@ -36,7 +29,7 @@ export default function Page() {
         </div>
         <div className="flex w-full justify-center">
           <button
-            className={`hover:bg-black  text-white bg-primary border-white border p-4 md:px-20 text-base md:text-2xl`}
+            className={`hover:bg-black  text-white bg-primary border-white border p-2 md:px-20 text-base md:text-2xl`}
           >
             Read it
           </button>
