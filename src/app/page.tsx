@@ -19,8 +19,8 @@ export default function Home() {
               <Image
                 src={MaskGroup.src}
                 alt="Mask group"
-                width={410}
-                height={410}
+                width={480}
+                height={480}
                 className="object-cover"
               />
             </div>

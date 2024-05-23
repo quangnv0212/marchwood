@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import CollapseCommon from "@/components/collapse-common";
+import { HeaderTransparent } from "@/components/Header-transparent";
 export default function Ir35() {
   function CardComponent(data: {
     title: string;
@@ -74,8 +75,9 @@ export default function Ir35() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="md:p-10 p-4 md:h-[80vh] md:flex md:flex-col justify-center "
+        className="md:p-10 p-4 md:h-[80vh] flex flex-col gap-10 py-20 relative"
       >
+        <HeaderTransparent />
         <div className="md:pt-20 md:pb-10 p-2 py-20 flex flex-col gap-6">
           <p className="font-semibold text-white text-base md:text-xl md:pb-10">
             <Link href={"/"}>HOME</Link> /{" "}

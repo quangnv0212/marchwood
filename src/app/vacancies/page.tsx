@@ -11,10 +11,23 @@ import Checkbox from "@mui/material/Checkbox";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Slider from "@mui/material/Slider";
+import VolumeDown from "@mui/icons-material/VolumeDown";
+import VolumeUp from "@mui/icons-material/VolumeUp";
+
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 import UploadCV from "@/components/job-seekers-page/uploadCV";
+import { useRouter } from "next/navigation";
 export default function Page() {
+  const router = useRouter();
+  const [value, setValue] = useState(30);
+
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    setValue(newValue as number);
+  };
   const data = [
     {
       title: "INDUSTRY",
@@ -183,29 +196,54 @@ export default function Page() {
         <div className="bg-white md:p-16 text-primary flex md:gap-16">
           <div className="md:w-1/3 flex flex-col gap-3">
             <div className="desktop">
-              {data.map((item, idx) => (
-                <div key={idx} className="border border-primary  p-6">
-                  <p>{item.title}</p>
-                  {item.items.map((item, idx) => (
-                    <div key={idx} className="flex items-center">
-                      <Checkbox {...label} />
-                      <p>{item}</p>
-                    </div>
-                  ))}
-                  {item.isMore && (
-                    <button className="border border-primary w-full p-3 mt-2">
-                      More
-                    </button>
-                  )}
+              <div className="flex flex-col gap-5">
+                {data.map((item, idx) => (
+                  <div key={idx} className="border border-primary p-6">
+                    <p>{item.title}</p>
+                    {item.items.map((item, idx) => (
+                      <div key={idx} className="flex items-center">
+                        <Checkbox {...label} />
+                        <p>{item}</p>
+                      </div>
+                    ))}
+                    {item.isMore && (
+                      <button className="border border-primary w-full p-3 mt-2">
+                        More
+                      </button>
+                    )}
+                  </div>
+                ))}
+                <div className="border border-primary p-6">
+                  <p>SALARY</p>
+                  <Slider
+                    aria-label="Volume"
+                    value={value}
+                    onChange={handleChange}
+                  />
+                  <div className="flex justify-between">
+                    <p>£20,000</p>
+                    <p>£300,000</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Checkbox {...label} />
+                    <p>Include jobs with no salary info</p>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-10 p-3 py-10">
             {jobList.map((job, idx) => (
               <div key={idx} className="flex flex-col gap-4 border-b-2 pb-7">
-                <p className="md:text-2xl text-xl font-semibold">{job.title}</p>
+                <p
+                  onClick={() => {
+                    router.push("/vacancy");
+                  }}
+                  className="md:text-2xl text-xl font-semibold cursor-pointer"
+                >
+                  {job.title}
+                </p>
                 <p className="md:text-lg text-sm flex gap-2 items-center">
                   <img src={IcLocation.src} alt="" />
                   {job.location}

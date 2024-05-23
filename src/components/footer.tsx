@@ -33,7 +33,7 @@ export default function Footer() {
     },
   ];
   return (
-    <footer className="flex flex-col gap-10 md:flex-row justify-between md:p-16 md:px-32 p-4 bg-[#192A3E] text-white">
+    <footer className="flex flex-col gap-10 md:flex-row justify-between md:py-[52px] md:px-[63px] p-4 bg-[#192A3E] text-white">
       <Modal
         open={open}
         onClose={handleClose}
@@ -46,8 +46,11 @@ export default function Footer() {
       </Modal>
       <div className="flex flex-col md:gap-10 gap-5">
         <div className="flex md:gap-4 justify-between items-center">
-          <img src={Logo.src} alt="logo" className="h-10" />
-          <button onClick={handleOpen} className="border md:p-2 p-2 md:px-16 ">
+          <img src={Logo.src} alt="logo" className="md:w-[91px]" />
+          <button
+            onClick={handleOpen}
+            className="border md:p-2 p-2 md:px-16 md:text-[20px] "
+          >
             Contact us
           </button>
         </div>
@@ -57,7 +60,7 @@ export default function Footer() {
               key={indx}
               src={social.src}
               alt={social.name}
-              className="h-6"
+              className="md:w-[31px]"
             />
           ))}
         </div>

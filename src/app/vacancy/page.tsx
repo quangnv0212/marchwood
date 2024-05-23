@@ -1,3 +1,4 @@
+"use client";
 import IcLeftArr from "@/assets/images/Arrow.png";
 import Location1 from "@/assets/images/Location 1.png";
 import IcLocation from "@/assets/images/Location 2.svg";
@@ -7,8 +8,10 @@ import IcMechanical from "@/assets/images/ic_mechanical.png";
 import IcMoney from "@/assets/images/ic_money.png";
 import IcPermanent from "@/assets/images/ic_permanance.png";
 import UploadCV from "@/components/job-seekers-page/uploadCV";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
+  const router = useRouter();
   const benefit = [
     {
       title: "Aviation",
@@ -53,9 +56,14 @@ export default function Page() {
     <>
       <div className="bg-primary text-white md:p-10 md:px-32 flex flex-col gap-3 md:gap-6 p-3">
         <div className="">
-          <div className="flex gap-3 font-semibold items-center md:py-10">
+          <div
+            className="flex gap-3 font-semibold items-center md:py-10 cursor-pointer"
+            onClick={() => {
+              router.push("/vacancies");
+            }}
+          >
             <img src={IcLeftArr.src} alt="" />
-            <p className="text-sm">BACK TO SEARCH RESULTS</p>
+            <p className="text-sm ">BACK TO SEARCH RESULTS</p>
           </div>
         </div>
         <p className="md:text-4xl text-2xl">Mechanical Engineer</p>
