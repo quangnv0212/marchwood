@@ -2,10 +2,24 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import StaffImage from "@/assets/images/Staff Image.png";
 import "swiper/css";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export interface ISliderCommonProps {
   title: string;
 }
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  width: 1000,
+};
 
 export function SliderComponent({ title }: ISliderCommonProps) {
   const data = [
@@ -35,8 +49,20 @@ export function SliderComponent({ title }: ISliderCommonProps) {
       image: StaffImage.src,
     },
   ];
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const router = useRouter();
   return (
     <div className="flex flex-col md:gap-5 gap-3 md:py-6 md:px-10 p-2">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>2</Box>
+      </Modal>
       <p className="text-xl md:text-3xl font-semibold">{title}</p>
       <div className="desktop">
         <Swiper
@@ -51,7 +77,11 @@ export function SliderComponent({ title }: ISliderCommonProps) {
               <img
                 src={consultant.image}
                 alt={consultant.name}
-                className="object-cover"
+                className="object-cover cursor-pointer"
+                // onClick={handleOpen}
+                onClick={() => {
+                  router.push("/meet-the-team");
+                }}
               />
             </SwiperSlide>
           ))}

@@ -1,8 +1,27 @@
-import React from "react";
-import Logo from "@/assets/images/logo.png";
+"use client";
 import Linkedin from "@/assets/images/LI-White.png";
 import WhatsApp from "@/assets/images/WA-White.png";
+import Logo from "@/assets/images/logo.png";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { useState } from "react";
+import { ContactUs } from "./contact-us";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  width: 1000,
+};
+
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const socials = [
     {
       name: "LinkedIn",
@@ -15,10 +34,22 @@ export default function Footer() {
   ];
   return (
     <footer className="flex flex-col gap-10 md:flex-row justify-between md:p-16 md:px-32 p-4 bg-[#192A3E] text-white">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <ContactUs />
+        </Box>
+      </Modal>
       <div className="flex flex-col md:gap-10 gap-5">
         <div className="flex md:gap-4 justify-between items-center">
           <img src={Logo.src} alt="logo" className="h-10" />
-          <button className="border md:p-2 p-2 md:px-16 ">Contact us</button>
+          <button onClick={handleOpen} className="border md:p-2 p-2 md:px-16 ">
+            Contact us
+          </button>
         </div>
         <div className="flex md:gap-5 gap-4">
           {socials.map((social, indx) => (
