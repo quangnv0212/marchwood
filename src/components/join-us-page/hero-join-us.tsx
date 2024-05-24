@@ -1,6 +1,6 @@
 import JoinusBanner from "@/assets/images/join-us-banner.png";
 import Link from "next/link";
-import { HeaderTransparent } from "../Header-transparent";
+import { HeaderTransparent } from "../header-transparent";
 export default function HeroJoinUs() {
   return (
     <div

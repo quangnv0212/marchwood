@@ -1,28 +1,8 @@
 "use client";
 import AboutUsBanner from "@/assets/images/about-us-banner.png";
 import Link from "next/link";
-import { HeaderTransparent } from "../Header-transparent";
-import { useEffect, useState } from "react";
-import { Header } from "../header";
+import { HeaderTransparent } from "../header-transparent";
 export default function HeroAboutUs() {
-  // const [scrollPosition, setScrollPosition] = useState(0);
-  // const [lastScrollTop, setLastScrollTop] = useState(0);
-
-  // useEffect(() => {
-  //   const scrollHandler = () => {
-  //     setScrollPosition(window.pageYOffset);
-  //     setLastScrollTop(scrollPosition);
-  //   };
-
-  //   window.addEventListener("scroll", scrollHandler);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", scrollHandler);
-  //   };
-  // }, [scrollPosition]);
-
-  // const isScrollingUp = scrollPosition < lastScrollTop && scrollPosition > 1000;
-
   return (
     <>
       {/* {isScrollingUp && <Header />} */}
@@ -32,7 +12,7 @@ export default function HeroAboutUs() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="md:p-10 p-4 md:h-[80vh] flex flex-col gap-10 py-20 z-0"
+        className="md:p-10 p-4 md:min-h-[80vh] flex flex-col gap-10 py-20 z-0"
       >
         <HeaderTransparent />
 

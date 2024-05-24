@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 import CollapseCommon from "@/components/collapse-common";
-import { HeaderTransparent } from "@/components/Header-transparent";
+import { HeaderTransparent } from "@/components/header-transparent";
 export default function Ir35() {
   function CardComponent(data: {
     title: string;

@@ -23,7 +23,7 @@ export function HeaderTransparent() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div className="absolute">
+    <div className="">
       <Modal
         open={open}
         onClose={handleClose}

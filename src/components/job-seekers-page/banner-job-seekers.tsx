@@ -1,6 +1,6 @@
 import JobSeekersBanner from "@/assets/images/job-seekers-banner.png";
 import Link from "next/link";
-import { HeaderTransparent } from "../Header-transparent";
+import { HeaderTransparent } from "../header-transparent";
 export default function BannerJobSeekers() {
   const buttons = [
     {

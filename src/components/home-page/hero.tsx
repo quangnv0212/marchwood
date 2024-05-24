@@ -1,12 +1,7 @@
 "use client";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import Building from "@/assets/images/building.png";
-import Image from "next/image";
-import LogoWhite from "@/assets/images/logo_white.png";
 import { useState } from "react";
-import { MenuComponent } from "../menu-component";
-import { HeaderTransparent } from "../Header-transparent";
+import { HeaderTransparent } from "../header-transparent";
 
 const style = {
   position: "absolute",
@@ -30,7 +25,7 @@ export function Hero() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="md:px-[76px] md:py-[30px] p-4 md:h-[80vh] md: md:flex md:flex-col md:gap-16 justify-center relative"
+      className="md:px-[76px] md:py-[30px] p-4 md:min-h-[80vh] md: md:flex md:flex-col md:gap-16 justify-center"
     >
       <HeaderTransparent />
       <div className="md:px-32 md:pt-20 md:pb-10 p-2 flex justify-between flex-col">

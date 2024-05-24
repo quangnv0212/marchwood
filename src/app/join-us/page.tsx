@@ -1,5 +1,8 @@
 "use client";
 
+import BackgroundLeft from "@/assets/images/back-ground-left.png";
+import BackgroundLeftWhite from "@/assets/images/background-left-white.png";
+import BackgroundRight from "@/assets/images/background-right.png";
 import Work from "@/assets/images/work.png";
 import { IntroCommon } from "@/components/intro-common";
 import UploadCV from "@/components/job-seekers-page/uploadCV";
@@ -10,11 +13,7 @@ import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import BackgroundRight from "@/assets/images/background-right.png";
-import BackgroundLeft from "@/assets/images/back-ground-left.png";
-import BackgroundLeftWhite from "@/assets/images/background-left-white.png";
 import { useState } from "react";
-import { Header } from "@/components/header";
 
 export default function JoinUsPage() {
   const CollapseComponent = () => {
